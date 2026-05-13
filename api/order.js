@@ -2,30 +2,22 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  
   if(req.method === 'OPTIONS') { res.status(200).end(); return; }
-  if(req.method !== 'POST') { res.status(405).json({error: 'Method not allowed'}); return; }
-
+  if(req.method !== 'POST') { res.status(405).json({error:'Method not allowed'}); return; }
   const { service, link, quantity } = req.body;
-  
-  if(!service || !link || !quantity) {
-    res.status(400).json({error: 'Missing fields'}); return;
-  }
-
+  if(!service || !link || !quantity) { res.status(400).json({error:'Missing fields'}); return; }
   try {
     const params = new URLSearchParams();
-    params.append('key', 'e6428cab83136a49fae4a92a9aa4b1cc');
+    params.append('key', '4c7b73bd82d0c2dc0226d6cf2121bb01');
     params.append('action', 'add');
     params.append('service', service);
     params.append('link', link);
     params.append('quantity', quantity);
-
-    const response = await fetch('https://smmfollows.com/api/v2', {
+    const response = await fetch('https://smmwiz.com/api/v2', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: {'Content-Type':'application/x-www-form-urlencoded'},
       body: params.toString()
     });
-
     const data = await response.json();
     res.status(200).json(data);
   } catch(e) {
