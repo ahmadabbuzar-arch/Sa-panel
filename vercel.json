@@ -1,0 +1,8 @@
+{
+  "functions": {
+    "api/order.js": {
+      "memory": 128,
+      "maxDuration": 10
+    }
+  }
+}
