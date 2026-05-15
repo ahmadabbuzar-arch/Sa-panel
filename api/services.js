@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
   try {
     const params = new URLSearchParams();
-    params.append('key', '0b68d9318d2b5a0eda2d08ebdbfb1e3c');
+    params.append('key', '65bb3099d96d7c11ea7ac5617d5a1256');
     params.append('action', 'services');
 
     const response = await fetch('https://smmsbi.com/api/v2', {
