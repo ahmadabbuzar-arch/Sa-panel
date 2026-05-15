@@ -6,10 +6,10 @@ export default async function handler(req, res) {
 
   try {
     const params = new URLSearchParams();
-    params.append('key', '4c7b73bd82d0c2dc0226d6cf2121bb01');
+    params.append('key', '0b68d9318d2b5a0eda2d08ebdbfb1e3c');
     params.append('action', 'services');
 
-    const response = await fetch('https://smmwiz.com/api/v2', {
+    const response = await fetch('https://smmsbi.com/api/v2', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: params.toString()
