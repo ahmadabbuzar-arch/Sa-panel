@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   if(!service || !link || !quantity) { res.status(400).json({error:'Missing fields'}); return; }
   try {
     const params = new URLSearchParams();
-    params.append('key', '0b68d9318d2b5a0eda2d08ebdbfb1e3c');
+    params.append('key', '65bb3099d96d7c11ea7ac5617d5a1256');
     params.append('action', 'add');
     params.append('service', service);
     params.append('link', link);
